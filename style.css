@@ -1,0 +1,148 @@
+/* General reset for consistent layout across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Centering layout with Flexbox */
+body {
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Card container for login form and welcome screen */
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.card h2 {
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Hidden utility class for screen toggling */
+.hidden {
+  display: none !important;
+}
+
+/* Error message alert box */
+.message-box {
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  background-color: #fde8e8;
+  color: #e53e3e;
+  border: 1px solid #feb2b2;
+}
+
+/* Form inputs styling */
+.form-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #3182ce;
+}
+
+.form-group input.input-error {
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+}
+
+/* Primary Button Styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3182ce;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #2b6cb0;
+}
+
+/* Successful Login Screen Styling */
+.success-badge {
+  width: 60px;
+  height: 60px;
+  background-color: #def7ec;
+  color: #03543f;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px auto;
+  border: 2px solid #84e1bc;
+}
+
+.welcome-box {
+  background-color: #ebf8ff;
+  border: 1px solid #bee3f8;
+  color: #2b6cb0;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#userDisplayName {
+  color: #3182ce;
+  font-weight: 700;
+}
+
+.logout-btn {
+  background-color: #e53e3e;
+}
+
+.logout-btn:hover {
+  background-color: #c53030;
+}

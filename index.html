@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study 10 - Login Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen 1: Login Card -->
+  <div id="loginCard" class="card">
+    <h2>Account Login</h2>
+    <p class="subtitle">Enter your credentials to access your account</p>
+
+    <!-- Error alert message box -->
+    <div id="message-box" class="message-box hidden"></div>
+
+    <!-- Login Form -->
+    <form id="loginForm" novalidate>
+      
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          placeholder="Enter username"
+        >
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="Enter password (min 6 chars)"
+        >
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitBtn">Login</button>
+    </form>
+  </div>
+
+  <!-- Screen 2: Successful Login Dashboard (Hidden by default) -->
+  <div id="welcomeCard" class="card hidden">
+    <div class="success-badge">✓</div>
+    <h2>Login Successful!</h2>
+    <p class="subtitle">Welcome back, <span id="userDisplayName">User</span>!</p>
+
+    <div class="welcome-box">
+      <p>🎉 You have successfully authenticated into your dashboard.</p>
+    </div>
+
+    <!-- Logout Button -->
+    <button type="button" id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
