@@ -32,7 +32,21 @@ loginForm.addEventListener('submit', function (event) {
     return; // Exit function early
   }
 
-  // Validation successful -> Switch to Welcome Screen!
+  // Rule 3: User Persistence & Password Verification via localStorage
+  const users = getStoredUsers();
+
+  if (users[username]) {
+    // Registered user exists -> Verify password
+    if (users[username] !== password) {
+      showError('Incorrect password for registered user!', passwordInput);
+      return;
+    }
+  } else {
+    // New user -> Auto-register user in localStorage
+    saveUser(username, password);
+  }
+
+  // Validation & authentication successful -> Switch to Welcome Screen!
   showWelcomeScreen(username);
 });
 
@@ -46,6 +60,26 @@ logoutBtn.addEventListener('click', function () {
   loginForm.reset();
   resetMessages();
 });
+
+// Helper function: Retrieve stored users from localStorage
+function getStoredUsers() {
+  try {
+    return JSON.parse(localStorage.getItem('registered_users')) || {};
+  } catch (e) {
+    return {};
+  }
+}
+
+// Helper function: Save new user to localStorage
+function saveUser(username, password) {
+  const users = getStoredUsers();
+  users[username] = password;
+  try {
+    localStorage.setItem('registered_users', JSON.stringify(users));
+  } catch (e) {
+    console.error('Could not save user to localStorage:', e);
+  }
+}
 
 // Helper function: Show error message banner
 function showError(message, inputElement) {
