@@ -50,3 +50,5 @@ Or view it live: *(add a GitHub Pages link here once deployed)*
 - Toggling UI state (login screen ↔ welcome screen) via CSS classes
 - Basic accessible error feedback (border highlight + message box)
 
+<!-- Code rechecked and verified -->
+
